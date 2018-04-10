@@ -45,11 +45,11 @@ class PdoWorkshop2
 		return PdoWorkshop2::$monPdoWorkshop2;  
     }
     
+    /**login */
     public function checkLogin($table, $login, $password) {
         $req = 'Select * from '.$table.' where login="'.$login.'" and password ="'.$password.'"';
         $res = PdoWorkshop2::$monPdo->query($req);
         $checkLogin = $res->fetch();
-        var_dump("log " , $res, $checkLogin);
         if (empty($checkLogin)) {
             $rep = false;
         } else {
@@ -57,5 +57,109 @@ class PdoWorkshop2
         }
 		return $rep;
     }
+    /** */
 
+    /**apprenants */
+    public function getApprenants()
+	{
+		$req = "select * from apprenant";
+		$res = PdoWorkshop2::$monPdo->query($req);
+		$apprenants = $res->fetchAll();
+		return $apprenants;
+    }
+    public function createApprenant($idEquipe, $nom, $prenom, $login, $password)
+	{
+		$req = "insert into apprenant (ID_EQUIPE, NOM, PRENOM, LOGIN, PASSWORD) values ('$idEquipe', '$nom', '$prenom','$login','$password')" ;
+		$res = PdoWorkshop2::$monPdo->exec($req);
+
+	}
+    /** */
+
+    /**intervenants */
+    public function getIntervenants()
+	{
+		$req = "select * from intervenant";
+		$res = PdoWorkshop2::$monPdo->query($req);
+		$intervenants = $res->fetchAll();
+		return $intervenants;
+    }
+    public function createIntervenant($nom, $prenom, $login, $password, $status)
+	{
+		$req = "insert into intervenant (NOM, PRENOM, LOGIN, PASSWORD, STATUS) values ('$nom', '$prenom','$login','$password', '$status')" ;
+		$res = PdoWorkshop2::$monPdo->exec($req);
+
+	}
+    /** */
+
+    /**responsables */
+    public function getResponsables()
+	{
+		$req = "select * from responsable";
+		$res = PdoWorkshop2::$monPdo->query($req);
+		$responsables = $res->fetchAll();
+		return $responsables;
+    }
+    /** */
+
+    /**equipes */
+    public function createEquipe($idProjet, $libelle, $nbJetons)
+	{
+		$req = "insert into equipe (ID_PROJET, LIBELLE,NBJETONS) values ('$idProjet', '$libelle','$nbJetons')" ;
+		$res = PdoWorkshop2::$monPdo->exec($req);
+    }
+    public function updateEquipe($nbJetons, $id)
+    {
+        $req = "update equipe set NBJETONS = '".$nbJetons."' where id ='".$id."' ";
+        $res = PdoWorkshop2::$monPdo->exec($req);
+    }
+    public function getEquipe($id)
+	{
+		$req = "select * from equipe where id='".$id."'";
+		$res = PdoWorkshop2::$monPdo->query($req);
+		$equipe = $res->fetch();
+		return $equipe;
+    }
+    /** */
+
+    /**projets */
+    public function createProjet($idResponsable, $libelle, $nbJetons)
+	{
+		$req = "insert into projet (ID_RESPONSABLE, LIBELLE,NBJETONS) values ('$idResponsable', '$libelle','$nbJetons')" ;
+		$res = PdoWorkshop2::$monPdo->exec($req);
+    }
+    public function getProjets()
+	{
+		$req = "select * from projet";
+		$res = PdoWorkshop2::$monPdo->query($req);
+		$projets = $res->fetchAll();
+		return $projets;
+    }
+    // public function updateProjet($nbJetons, $id)
+    // {
+    //     $req = "update projet set NBJETONS = '".$nbJetons."' where id ='".$id."' ";
+    //     $res = PdoWorkshop2::$monPdo->exec($req);
+    // }
+    /** */
+
+    /**associations */
+    public function assocProjetIntervenant($idProjet, $idIntervenant)
+    {
+        $req = "insert into projet_intervenant (ID, ID_1) values ('$idProjet', '$idIntervenant')";
+        $res = PdoWorkshop2::$monPdo->exec($req);
+    }
+
+    // public function getApprenantsEquipeProjet($idProjet, $idEquipe)
+    // {
+    //     $req = "SELECT apprenant.nom, apprenant.prenom, projet.libelle, equipe.libelle 
+    //             FROM apprenant 
+    //             join equipe on apprenant.id_equipe=equipe.id
+    //             join projet on equipe.id_projet=projet.id
+    //             where id_projet='".$idProjet."' and id_equipe = '".$idEquipe."'";
+    //     var_dump($req);
+    //     $res = PdoWorkshop2::$monPdo->exec($req);
+    //     var_dump($res);
+        
+    // }
+    /** */
+        
 }
