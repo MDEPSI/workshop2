@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Mar 10 Avril 2018 à 11:17
+-- Généré le :  Mar 10 Avril 2018 à 11:22
 -- Version du serveur :  5.6.17
 -- Version de PHP :  5.5.12
 
@@ -19,6 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Base de données :  `workshop2`
 --
+CREATE DATABASE IF NOT EXISTS `workshop2` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `workshop2`;
 
 -- --------------------------------------------------------
 
