@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Mar 10 Avril 2018 à 09:56
+-- Généré le :  Mar 10 Avril 2018 à 11:17
 -- Version du serveur :  5.6.17
 -- Version de PHP :  5.5.12
 
@@ -28,14 +28,14 @@ SET time_zone = "+00:00";
 
 CREATE TABLE IF NOT EXISTS `apprenant` (
   `ID` bigint(4) NOT NULL AUTO_INCREMENT,
-  `ID_EQUIPE` bigint(4) NOT NULL,
+  `ID_EQUIPE` bigint(4) DEFAULT NULL,
   `NOM` char(32) DEFAULT NULL,
   `PRENOM` char(32) DEFAULT NULL,
   `LOGIN` char(32) DEFAULT NULL,
   `PASSWORD` char(32) DEFAULT NULL,
   PRIMARY KEY (`ID`),
   KEY `FK_APPRENANT_EQUIPE` (`ID_EQUIPE`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 -- --------------------------------------------------------
 
@@ -45,7 +45,7 @@ CREATE TABLE IF NOT EXISTS `apprenant` (
 
 CREATE TABLE IF NOT EXISTS `equipe` (
   `ID` bigint(4) NOT NULL AUTO_INCREMENT,
-  `ID_PROJET` bigint(4) NOT NULL,
+  `ID_PROJET` bigint(4) DEFAULT NULL,
   `LIBELLE` char(32) DEFAULT NULL,
   `NBJETONS` bigint(4) DEFAULT NULL,
   PRIMARY KEY (`ID`),
