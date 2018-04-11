@@ -88,7 +88,19 @@ class PdoWorkshop2
 		$req = "insert into intervenant (NOM, PRENOM, LOGIN, PASSWORD, STATUS) values ('$nom', '$prenom','$login','$password', '$status')" ;
 		$res = PdoWorkshop2::$monPdo->exec($req);
 
-	}
+    }
+    public function updateIntervenant($status, $id)
+    {
+        $req = "update intervenant set STATUS = '".$status."' where id ='".$id."' ";
+        $res = PdoWorkshop2::$monPdo->exec($req);
+    }
+    public function getIntervenant($id)
+	{
+		$req = "select * from intervenant where id='".$id."'";
+		$res = PdoWorkshop2::$monPdo->query($req);
+		$intervenant = $res->fetch();
+		return $intervenant;
+    }
     /** */
 
     /**responsables */
@@ -148,18 +160,17 @@ class PdoWorkshop2
         $res = PdoWorkshop2::$monPdo->exec($req);
     }
 
-    // public function getApprenantsEquipeProjet($idProjet, $idEquipe)
-    // {
-    //     $req = "SELECT apprenant.nom, apprenant.prenom, projet.libelle, equipe.libelle 
-    //             FROM apprenant 
-    //             join equipe on apprenant.id_equipe=equipe.id
-    //             join projet on equipe.id_projet=projet.id
-    //             where id_projet='".$idProjet."' and id_equipe = '".$idEquipe."'";
-    //     var_dump($req);
-    //     $res = PdoWorkshop2::$monPdo->exec($req);
-    //     var_dump($res);
-        
-    // }
+    public function getApprenantsEquipeProjet($idProjet, $idEquipe)
+    {
+        $req = "SELECT apprenant.nom, apprenant.prenom, projet.libelle, equipe.libelle 
+                FROM apprenant 
+                join equipe on apprenant.id_equipe=equipe.id
+                join projet on equipe.id_projet=projet.id
+                where id_projet=".$idProjet." and id_equipe = ".$idEquipe."";
+        $res = PdoWorkshop2::$monPdo->query($req);
+        $results = $res->fetchAll();
+        return $results;       
+    }
     /** */
         
 }
