@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-  <title>SB Admin - Start Bootstrap Template</title>
+  <title>KeepCoin</title>
   <!-- Bootstrap core CSS-->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <!-- Custom fonts for this template-->
@@ -30,7 +30,7 @@
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
                 <a class="nav-link" href="index.html">
                     <i class="fa fa-fw fa-dashboard"></i>
-                    <span class="nav-link-text">Acceuil</span>
+                    <span class="nav-link-text">Accueil</span>
                 </a>
             </li>
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
@@ -51,9 +51,9 @@
                     <i class="fa fa-fw fa-wrench"></i>
                     <span class="nav-link-text">Messagerie</span>
                 </a>
-</li>
+            </li>
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Gestion">
-                <a class="nav-link" href="tables.html">
+                <a class="nav-link" href="gestion.html">
                     <i class="fa fa-fw fa-file"></i>
                     <span class="nav-link-text">Gestion</span>
                 </a>
@@ -110,8 +110,8 @@
             <span class="d-lg-none">Messages
               <span class="badge badge-pill badge-primary">12 New</span>
             </span>
-            <!--<span class="indicator text-primary d-none d-lg-block">
-              <i class="fa fa-fw fa-circle"></i>-->
+            <span class="indicator text-primary d-none d-lg-block">
+              <i class="fa fa-fw fa-circle"></i>
             </span>
           </a>
           <div class="dropdown-menu" aria-labelledby="messagesDropdown">
@@ -178,7 +178,7 @@
         </li>
         <li class="nav-item">
           <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
-            <i class="fa fa-fw fa-sign-out"></i>Logout</a>
+            <i class="fa fa-fw fa-sign-out"></i>Déconnexion</a>
         </li>
       </ul>
     </div>
@@ -186,12 +186,12 @@
   <div class="content-wrapper">
       <div class="container-fluid">
           <!-- Breadcrumbs-->
-          <!-- <ol class="breadcrumb">
-        <li class="breadcrumb-item">
-            <a href="#">Dashboard</a>
-        </li>
-        <li class="breadcrumb-item active">My Dashboard</li>
-    </ol>-->
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="#">Accueil</a>
+            </li>
+            <li class="breadcrumb-item active">Projets</li>
+        </ol>
           <!-- Icon Cards-->
           <div class="row">
               <div class="col-xl-3 col-sm-6 mb-3">
@@ -280,15 +280,15 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+            <h5 class="modal-title" id="exampleModalLabel">Déconnexion ?</h5>
             <button class="close" type="button" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">×</span>
             </button>
           </div>
-          <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+          <div class="modal-body">Etes-vous sûr de vouloir vous déconnecter ?</div>
           <div class="modal-footer">
-            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-            <a class="btn btn-primary" href="login.html">Logout</a>
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Annuler</button>
+            <a class="btn btn-primary" href="login.html">Déconnexion</a>
           </div>
         </div>
       </div>
