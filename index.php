@@ -16,17 +16,19 @@ switch($uc)
 	case 'accueil':
 		{include("views/accueil.php");break;}
 
-	case 'affecterJuges':
-		{include("controllers/c_affecterJuges.php");break;}
+	case 'responsable':
+		{include("controllers/cResponsable.php");break;}
 
-	case 'gererHebergementJuges':
-		{include("controllers/c_gererHebergementJuges.php");break;}
+	case 'apprenant':
+		{include("controllers/cApprenant.php");break;}
 
-	case 'gererPartieComptable':
-		{include("controllers/c_gererPartieComptable.php");break;}
+	case 'intervenant':
+		{include("controllers/cIntervenant.php");break;}
 
-	case 'choisirPrestations' :
-		{include("controllers/c_choisirPrestations.php");break;}
+	case 'equipe':
+		{include("controllers/cEquipe.php");break;}
 
+	case 'projet':
+		{include("controllers/cProjet.php");break;}
 }
 ?>
