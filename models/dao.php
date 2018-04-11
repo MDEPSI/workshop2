@@ -136,6 +136,13 @@ class PdoWorkshop2
 		$equipe = $res->fetch();
 		return $equipe;
     }
+    public function getEquipes()
+	{
+		$req = "select * from equipe";
+		$res = PdoWorkshop2::$monPdo->query($req);
+		$equipes = $res->fetchAll();
+		return $equipes;
+    }
     /** */
 
     /**projets */
