@@ -4,7 +4,7 @@ $action = $_REQUEST['action'];
 switch($action){
 	case 'getAll' :{
 		$intervenants = $pdo->getIntervenants();
-		// include("views/intervenants.php");break;
+		include("views/intervenants.php");break;
 		
 	}
 	case 'create' :{

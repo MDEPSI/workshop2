@@ -40,7 +40,7 @@
                 </a>
             </li>
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
-                <a class="nav-link" href="index.php?uc=intervenant&action=afficherIntervenant">
+                <a class="nav-link" href="index.php?uc=intervenant&action=getAll">
                     <!--<a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">-->
                     <i class="fa fa-fw fa-list"></i>
                     <span class="nav-link-text">Intervenants</span>

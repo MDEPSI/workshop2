@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
 
 <head>
@@ -27,12 +27,12 @@
         <li class="breadcrumb-item">
           <a href="?uc=accueil">Accueil</a>
         </li>
-        <li class="breadcrumb-item active">Apprenants</li>
+        <li class="breadcrumb-item active">Intervenants</li>
       </ol>
       <!-- Example DataTables Card-->
       <div class="card mb-3">
           <div class="card-header">
-              <i class="fa fa-table"></i> Liste des apprenants
+              <i class="fa fa-table"></i> Liste des intervenants
           </div>
           <div class="card-body">
               <div class="table-responsive">
@@ -41,23 +41,28 @@
                           <tr>
                               <th>Nom</th>
                               <th>Prénom</th>
+                              <th>Status</th>
                           </tr>
                       </thead>
                         <?php
-                      foreach( $apprenants as $apprenant) 
+                      foreach( $intervenants as $intervenant) 
                       {
 
-                          $nom = $apprenant['NOM'];
-                          $prenom = $apprenant['PRENOM'];
-                          $id=$apprenant['ID'];
+                          $nom = $intervenant['NOM'];
+                          $prenom = $intervenant['PRENOM'];
+                          $id=$intervenant['ID'];
+                          $status=$intervenant['STATUS'];
                           ?>  
                           <tr>
                             <td>
-                              <input type="checkbox"> <?php echo $nom ?>
+                              <?php echo $nom ?>
                             </td>
 
                             <td>
                               <?php echo $prenom ?>
+                            </td>
+                            <td>
+                              <?php echo $status ?>
                             </td>
                           </tr>    
                         <?php     

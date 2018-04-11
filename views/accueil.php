@@ -71,7 +71,7 @@
                           </div>
                           <div class="mr-5">Intervenants</div>
                       </div>
-                      <a class="card-footer text-white clearfix small z-1" href="#">
+                      <a class="card-footer text-white clearfix small z-1" href="index.php?uc=intervenant&action=getAll">
                           <span class="float-left">Voir les intervenants</span>
                           <span class="float-right">
                               <i class="fa fa-angle-right"></i>
