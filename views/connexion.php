@@ -10,7 +10,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-  <title>SB Admin - Start Bootstrap Template</title>
+  <title>KeepCoin</title>
   <!-- Bootstrap core CSS-->
   <link href="./App_web/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <!-- Custom fonts for this template-->
@@ -22,17 +22,18 @@
 <body class="bg-dark">
   <div class="container">
     <div class="card card-login mx-auto mt-5">
+      <img src="images/KeepCoins.jpg" alt="logo" width="300">
       <div class="card-header">Connexion</div>
       <div class="card-body">
         <form id="frmConnexion" action="" method="post">
         <div class="form-group">
           <p>
             <label for="txtLogin" accesskey="n">Login : *</label>
-            <input class="form-control" type="text" id="txtLogin" name="txtLogin" maxlength="20" size="15" value="" title="Entrez votre login" />
+            <input class="form-control" type="text" id="txtLogin" name="txtLogin" maxlength="20" size="15" value="" title="Entrez votre login" required/>
           </p>
           <p>
             <label for="txtMdp" accesskey="m">Mot de passe : *</label>
-            <input class="form-control" type="password" id="txtMdp" name="txtMdp" maxlength="8" size="15" value=""  title="Entrez votre mot de passe"/>
+            <input class="form-control" type="password" id="txtMdp" name="txtMdp" maxlength="8" size="15" value=""  title="Entrez votre mot de passe" required/>
           </p>
           <p>
             <label for="txtRole" accesskey="m">Rôle : </label>
@@ -48,6 +49,15 @@
             <input class="btn btn-primary btn-block" type="submit" id="ok" value="Valider" />
             <input class="btn btn-primary btn-block" type="reset" id="annuler" value="Effacer" />
           </p> 
+
+          <?php
+          if($error){
+          ?>
+          <label class="error" type="error" id="error" value="error"><font size="3" color="red">Erreur : Informations de connexion incorrectes</font></label>
+          <?php
+          }
+          ?>
+
         </div>
       </form>
 <!--         <form>
@@ -76,9 +86,8 @@
 </body>
 
 <!-- Division pour le contenu principal -->
-<!--     <div id="contenu">         
-      <img src="images/KeepCoins.jpg" alt="logo" width="300">
-      <form id="frmConnexion" action="" method="post">
+<!--     <div id="contenu">
+<form id="frmConnexion" action="" method="post">
         <div class="corpsForm">
           <p>
             <label for="txtLogin" accesskey="n">* Login : </label>

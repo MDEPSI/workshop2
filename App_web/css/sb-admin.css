@@ -447,8 +447,16 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
   }
 }
 
+img {
+  margin: 10%;
+}
+
 .card-login {
   max-width: 25rem;
+}
+
+.card-header {
+  text-align:center;
 }
 
 .card-register {

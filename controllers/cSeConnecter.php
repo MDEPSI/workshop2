@@ -24,17 +24,31 @@ case 'connexion' :{
         $password = $_POST['txtMdp'];
       }
 
-      
-$loginok = false;
+      $i=0;
+      $loginok = false;
+      $error=false;
       // var_dump($login,$password) ;
       if ($table && $login && $password) {
-            $loginok = $pdo->checkLogin($table, $login, $password) ;
-      }      
-      if ($loginok == true) { 
-          include("views/accueil.php");break;}
-      
+            $loginok = $pdo->checkLogin($table, $login, $password);
+            
+      // } 
+      // if ($table || $login || $password) {
+            $i++ ;     
+      } 
+          
+      if ($loginok == true) {
+          include("views/bandeau.php"); 
+          include("views/accueil.php");
+          break;}
       else {
-        include("views/connexion.php");break;}
+        if ($i!=0){
+          $error=true;
+          $i=0;
+        }
+        include("views/connexion.php");
+        break;
+      }
+       
     }
 }
 
