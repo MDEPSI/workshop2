@@ -23,6 +23,13 @@ switch($action){
 		$equipe = $pdo->getEquipe($id);
 		// include("views/equipes.php");break;	
 	}
+	case 'getAll' :{
+		$equipes = $pdo->getEquipes();
+		// var_dump($apprenants);
+		// die;
+		include("views/groupes.php");break;
+		
+	}
 }
 
 ?>

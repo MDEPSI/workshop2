@@ -24,8 +24,10 @@ switch($action){
 		// include("views/apprenants.php");break;	
 	}
 	case 'getAll' :{
-		$projets = $pdo->getApprenants();
-		// include("views/projets.php");break;
+		$apprenants = $pdo->getApprenants();
+		// var_dump($apprenants);
+		// die;
+		include("views/apprenants.php");break;
 		
 	}
 }
