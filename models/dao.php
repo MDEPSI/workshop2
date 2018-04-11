@@ -72,7 +72,12 @@ class PdoWorkshop2
 		$req = "insert into apprenant (ID_EQUIPE, NOM, PRENOM, LOGIN, PASSWORD) values ('$idEquipe', '$nom', '$prenom','$login','$password')" ;
 		$res = PdoWorkshop2::$monPdo->exec($req);
 
-	}
+    }
+    public function updateApprenant($idEquipe, $id)
+    {
+        $req = "update apprenant set ID_EQUIPE = '".$idEquipe."' where id ='".$id."' ";
+        $res = PdoWorkshop2::$monPdo->exec($req);
+    }
     /** */
 
     /**intervenants */
