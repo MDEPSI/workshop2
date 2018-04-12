@@ -42,6 +42,7 @@
                               <th>Nom</th>
                               <th>Prénom</th>
                               <th>Status</th>
+							  <th>Nombre de jetons</th>
                           </tr>
                       </thead>
                         <?php
@@ -64,15 +65,15 @@
                             <td>
                               <?php echo $status ?>
                             </td>
+							<td>
+                              <?php echo rand(0, 50); ?>
+                            </td>
                           </tr>    
                         <?php     
                         }
                       ?>
                   </table>
               </div>
-          </div>
-          <div class="card-footer small text-muted">
-              <a class="btn btn-primary btn-block" href="groupes.html" style="height:40px;width:200px">Créer le groupe</a>
           </div>
       </div>
     </div>
