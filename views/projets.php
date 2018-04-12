@@ -71,9 +71,29 @@
                       ?>
                   </table>
               </div>
+				<div class="modal fade" id="test" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+					<form method="POST" action="">
+					  <div class="modal-dialog" role="document">
+						  <div class="modal-content">
+							  <div class="modal-header">
+								  <h5 class="modal-title" name="nom" id="exampleModalLabel">Projet</h5>
+								  <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+									  <span aria-hidden="true">×</span>
+								  </button>
+							  </div>
+							  <input id="projet" name="idProjet" type="hidden" value=1>
+							  <input id="groupeName" name="libelle" type="text" placeholder="Saisir le nom du projet">
+							  <div class="modal-footer">
+								  <button class="btn btn-secondary" type="button" data-dismiss="modal">Annuler</button>
+								  <button class="btn btn-primary" type="submit">Enregistrer</button>
+							  </div>
+						  </div>
+					  </div>
+					</form>
+				 </div>
           </div>
           <div class="card-footer small text-muted">
-              <a class="btn btn-primary btn-block" href="groupes.html" style="height:40px;width:200px">Créer le groupe</a>
+              <a class="btn btn-primary btn-block" data-toggle="modal" data-target="#test" href="#" style="height:40px;width:200px">Créer un projet</a>
           </div>
       </div>
     </div>

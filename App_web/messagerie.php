@@ -51,52 +51,61 @@
                           </tfoot>
                           <tbody>
                               <tr>
-                                  <td>Tiger : Nixonzzzzzzzzzzzzzzz zzzzzzzzzzzzzzzzzzzzzzzzzzz zzzzzzzzzzzzzzzzzzzzzzzzz zzzzzzzzzzzzzzzzzzzzzzzzzzzzzz zzzzzzzzzzzzzzzzzzz zzzzzzzzzzzzzzzzzzzzzzzz zzzzzzzzzzzzzzz zzzzzzzzzzzzzzzzzzzzz zz zzzzzzzzzzzz zzzzz</td>
+                                  <td><b>Maxime</b> : Ceci est un très long message. Ceci est un très long message. Ceci est un très long message. Ceci est un très long message. Ceci est un très long message. Ceci est un très long message. Ceci est un très long message.</td>
                               </tr>
                               <tr>
-                                  <td>Garrett Winters</td>
+                                  <td><b>Jeremy</b> : Quels sont les dates du workshop ?</td>
                               </tr>
                               <tr>
-                                  <td>Ashton Cox</td>
+                                  <td><b><font color="red">Patrick</font></b> : Les dates dont du 9 au 13 avril</td>
                               </tr>
                               <tr>
-                                  <td>Cedric Kelly</td>
+                                  <td><b>Henri</b> : Que doit-on rendre ?</td>
                               </tr>
                               <tr>
-                                  <td>Airi Satou</td>
+                                  <td><b><font color="red">Patrick</font></b> : Vous devez rendre une vidéo présentant votre solution ainsi que les liens du code source.</td>
                               </tr>
                               <tr>
-                                  <td>Brielle Williamson</td>
+                                  <td><b>Lucas</b> : Pour quand ?</td>
                               </tr>
                               <tr>
-                                  <td>Herrod Chandler</td>
+                                  <td><b><font color="red">Patrick</font></b> : Pour jeudi soir</td>
                               </tr>
                               <tr>
-                                  <td>Rhona Davidson</td>
+                                  <td><b>Jeremy</b> : Quels sont les dates du workshop ?</td>
                               </tr>
                               <tr>
-                                  <td>Colleen Hurst</td>
+                                  <td><b><font color="red">Patrick</font></b> : Les dates dont du 9 au 13 avril</td>
                               </tr>
                               <tr>
-                                  <td>Sonya Frost</td>
+                                  <td><b>Henri</b> : Que doit-on rendre ?</td>
                               </tr>
                               <tr>
-                                  <td>Jena Gaines</td>
+                                  <td><b><font color="red">Patrick</font></b> : Vous devez rendre une vidéo présentant votre solution ainsi que les liens du code source.</td>
                               </tr>
                               <tr>
-                                  <td>Quinn Flynn</td>
+                                  <td><b>Lucas</b> : Pour quand ?</td>
                               </tr>
                               <tr>
-                                  <td>Charde Marshall</td>
+                                  <td><b><font color="red">Patrick</font></b> : Pour jeudi soir</td>
+                              </tr>
+							                                <tr>
+                                  <td><b>Jeremy</b> : Quels sont les dates du workshop ?</td>
                               </tr>
                               <tr>
-                                  <td>Haley Kennedy</td>
+                                  <td><b><font color="red">Patrick</font></b> : Les dates dont du 9 au 13 avril</td>
                               </tr>
                               <tr>
-                                  <td>Tatyana Fitzpatrick</td>
+                                  <td><b>Henri</b> : Que doit-on rendre ?</td>
                               </tr>
                               <tr>
-                                  <td>Michael Silva</td>
+                                  <td><b><font color="red">Patrick</font></b> : Vous devez rendre une vidéo présentant votre solution ainsi que les liens du code source.</td>
+                              </tr>
+                              <tr>
+                                  <td><b>Lucas</b> : Pour quand ?</td>
+                              </tr>
+                              <tr>
+                                  <td><b><font color="red">Patrick</font></b> : Pour jeudi soir</td>
                               </tr>
                           </tbody>
                       </table>
@@ -106,34 +115,26 @@
                   
                   <div class="row">
                       <div class="col-md-6">
-                          <a class="btn btn-primary btn-block" data-toggle="modal" data-target="#exampleModal" style="height:40px;width:200px" href="#">Envoyer un message</a>
+                          <a class="btn btn-primary btn-block" data-toggle="modal" data-target="#envoyerMessage" style="height:40px;width:200px" href="#">Envoyer un message</a>
                       </div>
                       <div class="col-md-6 text-right">
-                          Jetons restants : 5
+					  <?php
+
+						$jeton = 5;
+						if(isset($_POST['ok'])){
+							
+							$jeton -= 1;
+							echo "nb jeton : " , $jeton;
+						} else {
+							$jeton = 5;
+							echo "nb jeton : " , $jeton;
+						}
+					  ?>
                       </div>
                   </div>
               </div>
           </div>
       </div>
-      <!-- Group Modal-->
-      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                  <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalLabel">Message</h5>
-                      <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                          <span aria-hidden="true">×</span>
-                      </button>
-                  </div>
-                  <textarea id="groupeName" name="groupeName" type="text" placeholder="Saisir votre message"></textarea>
-                  <!--<div class="modal-body">Voulez-vous enregistrer ce nom de groupe ?</div>-->
-                  <div class="modal-footer">
-                      <button class="btn btn-secondary" type="button" data-dismiss="modal">Annuler</button>
-                      <a class="btn btn-primary" href="messagerie.html">Envoyer</a>
-                  </div>
-              </div>
-        </div>
-    </div>
     <!-- /.container-fluid-->
                   <!-- /.content-wrapper-->
                   <footer class="sticky-footer">
@@ -148,19 +149,23 @@
                       <i class="fa fa-angle-up"></i>
                   </a>
                   <!-- Logout Modal-->
-                  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal fade" id="envoyerMessage" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                       <div class="modal-dialog" role="document">
                           <div class="modal-content">
                               <div class="modal-header">
-                                  <h5 class="modal-title" id="exampleModalLabel">Déconnexion ?</h5>
+                                  <h5 class="modal-title" id="exampleModalLabel">Message</h5>
                                   <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                                       <span aria-hidden="true">×</span>
                                   </button>
                               </div>
-                              <div class="modal-body">Etes-vous sûr de vouloir vous déconnecter ?</div>
+							  <textarea type="text" rows="4" cols="50" placeholder="Saisissez votre message"></textarea>
+                              <div class="modal-body">Etes-vous sûr de vouloir envoyer votre message ?</div>
                               <div class="modal-footer">
-                                  <button class="btn btn-secondary" type="button" data-dismiss="modal">Annuler</button>
-                                  <a class="btn btn-primary" href="login.html">Déconnecter</a>
+							    <button class="btn btn-secondary" type="button" data-dismiss="modal">Annuler</button>
+							  <form method="post" action="">
+									<input type="hidden" value=1 name = "ok"></input>
+                                  <button type="submit" class="btn btn-primary" id="validerMessage" name="validerMessage">Envoyer</button>
+							</form>
                               </div>
                           </div>
                       </div>
