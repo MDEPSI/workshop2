@@ -46,7 +46,20 @@
                 
                 
             </li>
-            <?php if ($_SESSION['session'] == 3) {
+
+            <?php 
+            if ($_SESSION['session'] == 3) {
+            ?>
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
+                <a class="nav-link" href="index.php?uc=projet&action=getAll">
+                    <i class="fa fa-fw fa-list"></i>
+                    <span class="nav-link-text">Projets</span>
+                </a>
+            </li>
+
+            <?php
+          }
+            if ($_SESSION['session'] == 3) {
             ?>
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
                 <a class="nav-link" href="index.php?uc=intervenant&action=getAll">

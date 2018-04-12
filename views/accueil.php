@@ -72,7 +72,7 @@
                           </div>
                           <div class="mr-5">Groupes</div>
                       </div>
-                      <a class="card-footer text-white clearfix small z-1" href="#">
+                      <a class="card-footer text-white clearfix small z-1" href="index.php?uc=equipe&action=getAll">
                           <span class="float-left">Voir les groupes</span>
                           <span class="float-right">
                               <i class="fa fa-angle-right"></i>
@@ -104,8 +104,8 @@
                           </div>
                           <div class="mr-5">Messagerie</div>
                       </div>
-                      <a class="card-footer text-white clearfix small z-1" href="#">
-                          <span class="float-left">Voir les messages</span>
+                      <a class="card-footer text-white clearfix small z-1">
+                          <span class="float-left">A venir</span>
                           <span class="float-right">
                               <i class="fa fa-angle-right"></i>
                           </span>
