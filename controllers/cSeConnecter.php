@@ -1,5 +1,4 @@
 <?php
-session_start();
 
 if(!isset($_REQUEST['action']))
      $action = 'connexion';

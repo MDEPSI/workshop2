@@ -1,7 +1,7 @@
 <?php
     require_once("models/dao.php");
     $pdo = PdoWorkshop2::getPdoWorkshop2();
-
+session_start();
 
 if(!isset($_REQUEST['uc']))
      $uc = 'connexion';
