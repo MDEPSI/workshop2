@@ -36,6 +36,7 @@
             <i class="fa fa-fw fa-comments"></i>
         </div>-->
               <?php
+                $i = 0;
                 foreach( $equipes as $equipe) 
                       {
 
@@ -46,8 +47,18 @@
                           $id=$equipe['ID'];
                           ?>
                           <div class="col-xl-3 col-sm-6 mb-3">
-
-                            <div class="card text-white bg-danger o-hidden h-100">
+                            <?php 
+                            if ($i%2==0) {
+                              ?>
+                              <div class="card text-white bg-danger o-hidden h-100">
+                              <?php
+                            } elseif ($i%2==1) {
+                              ?>
+                              <div class="card text-white bg-warning o-hidden h-100">
+                              <?php
+                            }
+                            $i++;
+                            ?>
                               <div class="card-body">  
                                 <div class="mr-5">
                                     <?php echo $libelle?> <br>
@@ -55,13 +66,13 @@
                                 </div>
                               </div>
                                 <a class="card-footer text-white clearfix small z-1">
-                                    <span class="float-left"><?php echo $nom?> <?php echo $prenom?></span>
+                                    <span class="float-left">Apprenant <?php echo $i ?></span>
                                 </a>
                                 <a class="card-footer text-white clearfix small z-1">
-                                    <span class="float-left">Apprenant 2</span>
+                                    <span class="float-left">Apprenant <?php echo $i+1 ?></span>
                                 </a>
                                 <a class="card-footer text-white clearfix small z-1">
-                                    <span class="float-left">Apprenant 3</span>
+                                    <span class="float-left">Apprenant <?php echo ($i+1)*($i+1) ?></span>
                                 </a>
                               
                             </div>
