@@ -22,7 +22,7 @@
       <!-- Breadcrumbs-->
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
-          <a href="index.html">Accueil</a>
+          <a href="index.php?uc=accueil">Accueil</a>
         </li>
         <li class="breadcrumb-item active">Groupes</li>
       </ol>

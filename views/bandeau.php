@@ -1,6 +1,6 @@
 	<!DOCTYPE html>
 <html lang="en">
-
+<?php session_start();?>
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -33,12 +33,8 @@
                    <img src="images/KeepCoins.jpg" alt="logo" width="220" style="margin-left: -10px; margin-top: -45px; border-radius: 10px">
                 </a>
             </li>
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Gestion">
-                <a class="nav-link" href="index.php?uc=projet&action=getAll">
-                    <i class="fa fa-fw fa-list"></i>
-                    <span class="nav-link-text">Projets</span>
-                </a>
-            </li>
+            <?php if ($_SESSION['session'] == 3) {
+            ?>
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
                 <a class="nav-link" href="index.php?uc=intervenant&action=getAll">
                     <!--<a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">-->
@@ -46,12 +42,20 @@
                     <span class="nav-link-text">Intervenants</span>
                 </a>
             </li>
+            <?php
+            }  
+            if ($_SESSION['session'] == 1 || $_SESSION['session'] == 2 || $_SESSION['session'] == 3) {
+            ?>
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
                 <a class="nav-link" href="index.php?uc=equipe&action=getAll">
                     <i class="fa fa-fw fa-list"></i>
                     <span class="nav-link-text">Groupes</span>
                 </a>
             </li>
+            <?php
+            }
+            if ($_SESSION['session'] == 1 || $_SESSION['session'] == 2 || $_SESSION['session'] == 3) {
+            ?>
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
                 <a class="nav-link" href="index.php?uc=apprenant&action=getAll">
                     <i class="fa fa-fw fa-list"></i>
@@ -59,7 +63,10 @@
                 </a>
             </li>
             
-            
+            <?php
+            }
+            if ($_SESSION['session'] == 1 || $_SESSION['session'] == 2) {
+            ?>
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
                 <a class="nav-link" href="index.php?uc=messagerie&action=afficherMessagerie">
                     <!--<a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">-->
@@ -67,7 +74,9 @@
                     <span class="nav-link-text">Messagerie</span>
                 </a>
             </li>
-            
+            <?php
+            }
+            ?>
             
         </ul>
       <ul class="navbar-nav sidenav-toggler">

@@ -64,10 +64,31 @@
                         }
                       ?>
                   </table>
+                  <div class="modal fade" id="test" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <form method="POST" action="index.php?uc=equipe&action=create">
+                      <div class="modal-dialog" role="document">
+                          <div class="modal-content">
+                              <div class="modal-header">
+                                  <h5 class="modal-title" name="nom" id="exampleModalLabel">Groupe</h5>
+                                  <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                      <span aria-hidden="true">×</span>
+                                  </button>
+                              </div>
+                              <input id="projet" name="idProjet" type="hidden" value=1>
+                              <input id="groupeName" name="libelle" type="text" placeholder="Saisir nom du groupe">
+                              <input id="nbJetons" name="nbJetons" type="number" placeholder="Saisir nombre de jetons">
+                              <div class="modal-footer">
+                                  <button class="btn btn-secondary" type="button" data-dismiss="modal">Annuler</button>
+                                  <button class="btn btn-primary" type="submit">Enregistrer</button>
+                              </div>
+                          </div>
+                      </div>
+                    </form>
+                  </div>
               </div>
           </div>
           <div class="card-footer small text-muted">
-              <a class="btn btn-primary btn-block" href="groupes.html" style="height:40px;width:200px">Créer le groupe</a>
+              <a class="btn btn-primary btn-block" data-toggle="modal" data-target="#test" style="height:40px;width:200px" href="#">Créer le groupe</a>
           </div>
       </div>
     </div>
@@ -76,7 +97,7 @@
     <footer class="sticky-footer">
       <div class="container">
         <div class="text-center">
-          <small>Copyright © KeepCoin</small>
+          <small>Copyright © KeepCoin and carry on</small>
         </div>
       </div>
     </footer>
@@ -85,23 +106,7 @@
       <i class="fa fa-angle-up"></i>
     </a>
     <!-- Logout Modal-->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Déconnexion ?</h5>
-            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">×</span>
-            </button>
-          </div>
-          <div class="modal-body">Etes-vous sûr de vouloir vous déconnecter ?</div>
-          <div class="modal-footer">
-            <button class="btn btn-secondary" type="button" data-dismiss="modal">Annuler</button>
-            <a class="btn btn-primary" href="login.html">Déconnecter</a>
-          </div>
-        </div>
-      </div>
-    </div>
+    
     <!-- Bootstrap core JavaScript-->
     <script src="./App_web/vendor/jquery/jquery.min.js"></script>
     <script src="./App_web/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

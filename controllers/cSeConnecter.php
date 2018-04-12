@@ -36,6 +36,8 @@ case 'connexion' :{
       // if ($table || $login || $password) {
             $i++ ;     
       } 
+      var_dump($table, $_SESSION['session']);
+      // die;
       if ($loginok == true) {
             if (isset($_SESSION['session'])) {
               if ($table == "responsable"){
