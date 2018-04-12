@@ -45,10 +45,12 @@ case 'connexion' :{
 
               }elseif ($table == "intervenant") {
                   $_SESSION['session'] = 2;
+                  $intervenants = $pdo->getIntervenants();
                   include("views/bandeau.php");
                   include("views/intervenants.php");
               }elseif ($table == "apprenant"){
                 $_SESSION['session']= 1;
+                  $apprenants = $pdo->getApprenants();
                   include("views/bandeau.php");
                   include("views/apprenants.php");
               }
