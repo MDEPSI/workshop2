@@ -13,6 +13,7 @@ switch($action){
 	}
 	case 'getAll' :{
 		$projets = $pdo->getProjets();
+		$responsables = $pdo->getResponsables();
 		include("views/projets.php");break;
 		
 	}

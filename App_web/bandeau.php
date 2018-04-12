@@ -29,7 +29,7 @@
 
         <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-                <a class="nav-link" href="../index.php?uc=accueil">
+                <a class="nav-link" href="../index.php?uc=projet&action=getAll">
                    <img src="../images/KeepCoins.jpg" alt="logo" width="220" style="margin-left: -10px; margin-top: -45px; border-radius: 10px">
                 </a>
             </li>

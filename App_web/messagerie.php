@@ -27,7 +27,7 @@
           <!-- Breadcrumbs-->
           <ol class="breadcrumb">
               <li class="breadcrumb-item">
-                  <a href="../index.php?uc=accueil">Accueil</a>
+                  <a href="../?uc=accueil">Accueil</a>
               </li>
               <li class="breadcrumb-item active">Messagerie</li>
           </ol>
@@ -119,7 +119,6 @@
                       </div>
                       <div class="col-md-6 text-right">
 					  <?php
-
 						$jeton = 5;
 						if(isset($_POST['ok'])){
 							

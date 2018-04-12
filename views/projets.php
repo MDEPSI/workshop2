@@ -72,7 +72,7 @@
                   </table>
               </div>
 				<div class="modal fade" id="test" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-					<form method="POST" action="">
+					<form method="POST" action="index.php?uc=projet&action=create">
 					  <div class="modal-dialog" role="document">
 						  <div class="modal-content">
 							  <div class="modal-header">
@@ -81,8 +81,18 @@
 									  <span aria-hidden="true">×</span>
 								  </button>
 							  </div>
-							  <input id="projet" name="idProjet" type="hidden" value=1>
-							  <input id="groupeName" name="libelle" type="text" placeholder="Saisir le nom du projet">
+							  <select name = "idResponsable">
+                              <?php
+                                foreach ($responsables as $responsable)
+                                {
+                                ?>
+                                  <option value="<?php echo $responsable['ID']?>"><?php echo $responsable['NOM'] ?></option>
+                                <?php
+                                }
+                              ?>
+                              </select>
+							  <input id="projetName" name="libelle" type="text" placeholder="Saisir le nom du projet">
+							  <input id="nbJetonsProjet" name="nbJetons" type="number" placeholder="Saisir le nombre de jetons">
 							  <div class="modal-footer">
 								  <button class="btn btn-secondary" type="button" data-dismiss="modal">Annuler</button>
 								  <button class="btn btn-primary" type="submit">Enregistrer</button>
