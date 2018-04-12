@@ -1,6 +1,7 @@
 <?php
     require_once("models/dao.php");
     $pdo = PdoWorkshop2::getPdoWorkshop2();
+session_start();
 
 if(!isset($_REQUEST['uc']))
      $uc = 'connexion';
@@ -14,19 +15,26 @@ switch($uc)
 		{include("controllers/cSeConnecter.php");break;}
 
 	case 'accueil':
-		{include("views/accueil.php");break;}
+		{include("views/bandeau.php");include("views/accueil.php");break;}
 
-	case 'affecterJuges':
-		{include("controllers/c_affecterJuges.php");break;}
+	case 'responsable':
+		{
+			include("views/bandeau.php");include("controllers/cResponsable.php");break;}
 
-	case 'gererHebergementJuges':
-		{include("controllers/c_gererHebergementJuges.php");break;}
+	case 'apprenant':
+		{
+			include("views/bandeau.php");include("controllers/cApprenant.php");break;}
 
-	case 'gererPartieComptable':
-		{include("controllers/c_gererPartieComptable.php");break;}
+	case 'intervenant':
+		{
+			include("views/bandeau.php");include("controllers/cIntervenant.php");break;}
 
-	case 'choisirPrestations' :
-		{include("controllers/c_choisirPrestations.php");break;}
+	case 'equipe':
+		{
+			include("views/bandeau.php");include("controllers/cEquipe.php");break;}
 
+	case 'projet':
+		{
+			include("views/bandeau.php");include("controllers/cProjet.php");break;}
 }
 ?>

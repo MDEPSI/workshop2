@@ -24,17 +24,52 @@ case 'connexion' :{
         $password = $_POST['txtMdp'];
       }
 
-      
-$loginok = false;
+      $i=0;
+      $loginok = false;
+      $error=false;
       // var_dump($login,$password) ;
       if ($table && $login && $password) {
-            $loginok = $pdo->checkLogin($table, $login, $password) ;
-      }      
-      if ($loginok == true) { 
-          include("views/accueil.php");break;}
-      
+            $loginok = $pdo->checkLogin($table, $login, $password);
+            
+      // } 
+      // if ($table || $login || $password) {
+            $i++ ;     
+      } 
+      // var_dump($table, $_SESSION['session']);
+      // die;
+      if ($loginok == true) {
+            if (isset($_SESSION['session'])) {
+              if ($table == "responsable"){
+                  $_SESSION['session'] = 3;
+                  include("views/bandeau.php");
+                  include("views/accueil.php");
+
+              }elseif ($table == "intervenant") {
+                  $_SESSION['session'] = 2;
+                  $projets = $pdo->getProjets();
+                  include("views/bandeau.php");
+                  include("views/projets.php");
+              }elseif ($table == "apprenant"){
+                $_SESSION['session']= 1;
+                  $projets = $pdo->getProjets();
+                  include("views/bandeau.php");
+                  include("views/projets.php");
+              }
+
+            } else {
+                 include("views/connexion.php"); 
+            }
+
+          }
       else {
-        include("views/connexion.php");break;}
+        if ($i!=0){
+          $error=true;
+          $i=0;
+        }
+        include("views/connexion.php");
+        break;
+      }
+       
     }
 }
 
