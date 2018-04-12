@@ -29,9 +29,22 @@
 
         <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+                <?php if ($_SESSION['session'] == 3) {
+                ?>
                 <a class="nav-link" href="?uc=accueil">
                    <img src="images/KeepCoins.jpg" alt="logo" width="220" style="margin-left: -10px; margin-top: -45px; border-radius: 10px">
                 </a>
+                <?php 
+                } elseif ($_SESSION['session'] == 1 || $_SESSION['session'] == 2) {
+                ?>
+                  <a class="nav-link" href="?uc=projet&action=getAll">
+                   <img src="images/KeepCoins.jpg" alt="logo" width="220" style="margin-left: -10px; margin-top: -45px; border-radius: 10px">
+                  </a>
+                <?php
+                }
+                ?>
+                
+                
             </li>
             <?php if ($_SESSION['session'] == 3) {
             ?>

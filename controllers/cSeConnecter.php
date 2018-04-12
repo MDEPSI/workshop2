@@ -35,7 +35,7 @@ case 'connexion' :{
       // if ($table || $login || $password) {
             $i++ ;     
       } 
-      var_dump($table, $_SESSION['session']);
+      // var_dump($table, $_SESSION['session']);
       // die;
       if ($loginok == true) {
             if (isset($_SESSION['session'])) {
@@ -46,14 +46,14 @@ case 'connexion' :{
 
               }elseif ($table == "intervenant") {
                   $_SESSION['session'] = 2;
-                  $intervenants = $pdo->getIntervenants();
+                  $projets = $pdo->getProjets();
                   include("views/bandeau.php");
-                  include("views/intervenants.php");
+                  include("views/projets.php");
               }elseif ($table == "apprenant"){
                 $_SESSION['session']= 1;
-                  $apprenants = $pdo->getApprenants();
+                  $projets = $pdo->getProjets();
                   include("views/bandeau.php");
-                  include("views/apprenants.php");
+                  include("views/projets.php");
               }
 
             } else {
