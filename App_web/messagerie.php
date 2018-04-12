@@ -119,15 +119,31 @@
                       </div>
                       <div class="col-md-6 text-right">
 					  <?php
+
+            // echo $_SESSION['session'];
+            // die;
+
 						$jeton = 5;
-						if(isset($_POST['ok'])){
-							
-							$jeton -= 1;
-							echo "nb jeton : " , $jeton;
-						} else {
-							$jeton = 5;
-							echo "nb jeton : " , $jeton;
-						}
+            if ($_SESSION['session']==1) {
+              if(isset($_POST['ok'])){
+              
+              $jeton -= 1;
+              echo "<font size = '5'><b>Jetons restant : " , $jeton, "</b></font>";
+              } else {
+              $jeton = 5;
+              echo "<font size = '5'><b>Jetons restant : " , $jeton, "</b></font>";
+              }
+            } elseif ($_SESSION['session']==2) {
+              if(isset($_POST['ok'])){
+              
+              $jeton += 1;
+              echo "<font size = '5'><b>Jetons restant : " , $jeton, "</b></font>";
+              } else {
+              $jeton = 5;
+              echo "<font size = '5'><b>Jetons restant : " , $jeton, "</b></font>";
+              }
+            }
+						
 					  ?>
                       </div>
                   </div>
