@@ -12,11 +12,11 @@ switch($action){
 		
 	}
 	case 'update' :{
-		$nbJetons = $_REQUEST['nbJetons'];
+		$idEquipe = $_REQUEST['idEquipe'];
 		$id = $_REQUEST['id'];
 
-		$apprenant = $pdo->updateApprenant($nbJetons, $id);
-		// include("views/apprenants.php");break;	
+		$apprenant = $pdo->updateApprenant($idEquipe, $id);
+		include("views/apprenants.php");break;	
 	}
 	case 'get' :{
 		$id = $_REQUEST['id'];

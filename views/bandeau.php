@@ -34,7 +34,7 @@
                 </a>
             </li>
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Gestion">
-                <a class="nav-link" href="index.php?uc=projet&action=afficherProjet">
+                <a class="nav-link" href="index.php?uc=projet&action=getAll">
                     <i class="fa fa-fw fa-list"></i>
                     <span class="nav-link-text">Projet</span>
                 </a>
@@ -47,7 +47,7 @@
                 </a>
             </li>
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
-                <a class="nav-link" href="index.php?uc=groupe&action=afficherGroupe">
+                <a class="nav-link" href="index.php?uc=equipe&action=getAll">
                     <i class="fa fa-fw fa-list"></i>
                     <span class="nav-link-text">Groupes</span>
                 </a>

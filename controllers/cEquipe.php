@@ -8,7 +8,12 @@ switch($action){
 		$nbJetons = $_REQUEST['nbJetons'];
 
 		$equipe = $pdo->createEquipe($idProjet, $libelle, $nbJetons);
-		// include("views/equipes.php");break;
+		var_dump($idProjet);
+		var_dump($libelle);
+		var_dump($nbJetons);
+		var_dump($equipe);
+		die;
+		include("views/groupes.php");break;
 		
 	}
 	case 'update' :{
