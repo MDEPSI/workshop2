@@ -138,7 +138,7 @@ class PdoWorkshop2
     }
     public function getEquipes()
 	{
-		$req = "select equipe.id as ID, apprenant.nom as NOM, apprenant.prenom as PRENOM, equipe.libelle as LIBELLE, equipe.nbJetons AS NBJETONS from apprenant join equipe on apprenant.id_equipe=equipe.id";
+		$req = "select apprenant.nom as NOM, apprenant.prenom as PRENOM, equipe.libelle as LIBELLE, equipe.nbJetons as NBJETONS from apprenant join equipe on apprenant.id_equipe=equipe.id";
 		$res = PdoWorkshop2::$monPdo->query($req);
 		$equipes = $res->fetchAll();
 		return $equipes;
@@ -153,7 +153,7 @@ class PdoWorkshop2
     }
     public function getProjets()
 	{
-		$req = "select projet.libelle, projet.nbJetons, responsable.nom, responsable.prenom from projet join responsable on projet.id_responsable=responsable.id";
+		$req = "select projet.libelle as LIBELLE, projet.nbJetons as NBJETONS, responsable.nom as NOM, responsable.prenom as PRENOM from projet join responsable on projet.id_responsable=responsable.id";
 		$res = PdoWorkshop2::$monPdo->query($req);
 		$projets = $res->fetchAll();
 		return $projets;
