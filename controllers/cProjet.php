@@ -13,7 +13,7 @@ switch($action){
 	}
 	case 'getAll' :{
 		$projets = $pdo->getProjets();
-		// include("views/projets.php");break;
+		include("views/projets.php");break;
 		
 	}
 }

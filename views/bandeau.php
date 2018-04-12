@@ -36,7 +36,7 @@
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Gestion">
                 <a class="nav-link" href="index.php?uc=projet&action=getAll">
                     <i class="fa fa-fw fa-list"></i>
-                    <span class="nav-link-text">Projet</span>
+                    <span class="nav-link-text">Projets</span>
                 </a>
             </li>
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
