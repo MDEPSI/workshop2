@@ -27,7 +27,7 @@ switch($action){
 	}
 	case 'getAll' :{
 		$equipes = $pdo->getEquipes();
-		// var_dump($apprenants);
+		// var_dump($equipes);
 		// die;
 		include("views/groupes.php");break;
 		

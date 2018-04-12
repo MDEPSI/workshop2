@@ -16,6 +16,7 @@ switch($action){
 		$id = $_REQUEST['id'];
 
 		$apprenant = $pdo->updateApprenant($idEquipe, $id);
+		$projets = $pdo->getProjets();
 		include("views/apprenants.php");break;	
 	}
 	case 'get' :{
@@ -25,6 +26,8 @@ switch($action){
 	}
 	case 'getAll' :{
 		$apprenants = $pdo->getApprenants();
+		$projets = $pdo->getProjets();
+		
 		// var_dump($apprenants);
 		// die;
 		include("views/apprenants.php");break;

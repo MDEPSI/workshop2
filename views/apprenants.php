@@ -74,7 +74,16 @@
                                       <span aria-hidden="true">×</span>
                                   </button>
                               </div>
-                              <input id="projet" name="idProjet" type="hidden" value=1>
+                              <select name = "idProjet">
+                              <?php
+                                foreach ($projets as $projet)
+                                {
+                                ?>
+                                  <option value="<?php echo $projet['ID']?>"><?php echo $projet['LIBELLE'] ?></option>
+                                <?php
+                                }
+                              ?>
+                              </select>
                               <input id="groupeName" name="libelle" type="text" placeholder="Saisir nom du groupe">
                               <input id="nbJetons" name="nbJetons" type="number" placeholder="Saisir nombre de jetons">
                               <div class="modal-footer">
