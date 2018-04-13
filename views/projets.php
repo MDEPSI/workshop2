@@ -102,9 +102,16 @@
 					</form>
 				 </div>
           </div>
-          <div class="card-footer small text-muted">
-              <a class="btn btn-primary btn-block" data-toggle="modal" data-target="#test" href="#" style="height:40px;width:200px">Créer un projet</a>
-          </div>
+          <?php 
+          if ($_SESSION['session'] == 3) {
+            ?>
+            <div class="card-footer small text-muted">
+                <a class="btn btn-primary btn-block" data-toggle="modal" data-target="#test" href="#" style="height:40px;width:200px">Créer un projet</a>
+            </div>
+          <?php
+          }
+          ?>
+
       </div>
     </div>
     <!-- /.container-fluid-->

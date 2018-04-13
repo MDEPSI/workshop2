@@ -38,7 +38,7 @@ case 'connexion' :{
       // var_dump($table, $_SESSION['session']);
       // die;
       if ($loginok == true) {
-            if (isset($_SESSION['session'])) {
+            if (isset($_SESSION['session']) || ($_SESSION['session'] = 1 || $_SESSION['session'] = 2 || $_SESSION['session'] = 3)) {
               if ($table == "responsable"){
                   $_SESSION['session'] = 3;
                   include("views/bandeau.php");

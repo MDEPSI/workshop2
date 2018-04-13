@@ -13,7 +13,7 @@
 class PdoWorkshop2
 {
     private static $serveur='mysql:host=localhost';
-    private static $bdd='dbname=workshop2';   		
+    private static $bdd='dbname=Workshop2';   		
     private static $user='root' ;    		
     private static $mdp='' ;	
     private static $monPdo;
@@ -21,15 +21,18 @@ class PdoWorkshop2
 /**
  * Constructeur privé, crée l'instance de PDO qui sera sollicitée
  * pour toutes les méthodes de la classe
- */				
-	private function __construct()
-	{
-    		PdoWorkshop2::$monPdo = new PDO(PdoWorkshop2::$serveur.';'.PdoWorkshop2::$bdd, PdoWorkshop2::$user, PdoWorkshop2::$mdp); 
-			PdoWorkshop2::$monPdo->query("SET CHARACTER SET utf8");
-	}
-	public function _destruct(){
-		PdoWorkshop2::$monPdo = null;
-	}
+ */	
+private function __construct()
+    {try{
+            PdoWorkshop2::$monPdo = new PDO(PdoWorkshop2::$serveur.';'.PdoWorkshop2::$bdd, PdoWorkshop2::$user, PdoWorkshop2::$mdp); 
+            PdoWorkshop2::$monPdo->query("SET CHARACTER SET utf8");
+           } catch (PDOException $e) {
+        echo 'Échec lors de la connexion : ' . $e->getMessage();
+    }
+    }
+    public function _destruct(){
+        PdoWorkshop2::$monPdo = null;
+    }
 /**
  * Fonction statique qui crée l'unique instance de la classe
  *
